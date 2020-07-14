@@ -1,3 +1,41 @@
 .App {
-  text-align: center;
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+}
+
+.Display {
+  display: flex;
+  background-color: #858694;
+  height: 100px;
+  color: white;
+  padding: 10px;
+  text-align: right;
+  box-sizing: border-box;
+  width: 100%;
+  font-weight: bold;
+  justify-content: right;
+  align-items: center;
+  font-size: 2em;
+}
+
+.ButtonPanel {
+  display: flex;
+  flex-flow: column wrap;
+  width: 100%;
+}
+
+.ButtonRow {
+  display: flex;
+  height: 100px;
+}
+
+.Button {
+  display: flex;
+  border-right: 2px solid #d1d1d1;
+  border-bottom: 2px solid #d1d1d1;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
 }

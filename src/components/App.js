@@ -7,7 +7,7 @@ import '../css/App.css';
 
 function App() {
   return (
-    <div>
+    <div className="App">
       <Display />
       <ButtonPanel />
     </div>
