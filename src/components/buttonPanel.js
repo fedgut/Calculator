@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from 'button';
+import Button from './button';
 
 const g1 = ['AC', '+/-', '%', '÷'];
 const g2 = ['7', '8', '9', 'X'];

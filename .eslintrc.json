@@ -37,6 +37,7 @@
   },
   "ignorePatterns": [
     "dist/",
-    "build/"
+    "build/",
+   "src/serviceWorker.js"
   ]
 }
