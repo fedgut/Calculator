@@ -1,18 +1,15 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 // import Big from 'big.js';
+import ButtonPanel from './buttonPanel';
+import Display from './display';
 import '../css/App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit
-          <code>src/App.js</code>
-          and save to reload.
-        </p>
-      </header>
+    <div>
+      <Display />
+      <ButtonPanel />
     </div>
   );
 }
