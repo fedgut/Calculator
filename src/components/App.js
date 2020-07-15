@@ -3,7 +3,7 @@ import React from 'react';
 // import Big from 'big.js';
 import ButtonPanel from './buttonPanel';
 import Display from './display';
-import '../css/App.css';
+import '../css/App.css'
 
 function App() {
   return (
