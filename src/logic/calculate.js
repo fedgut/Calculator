@@ -3,6 +3,8 @@ import operate from './operate';
 export default function calculate(calcuatorData, buttonName) {
   let { total, next, operation } = calcuatorData;
 
+  const operations = ['+', '-', '/', 'x', '%'];
+
   if (buttonName === 'AC') {
     total = null;
     next = null;
@@ -15,16 +17,7 @@ export default function calculate(calcuatorData, buttonName) {
     operation = null;
   }
 
-  if (buttonName === '%') {
-    
-  }
-
-  if (
-    buttonName === '+' ||
-    buttonName === '-' ||
-    buttonName === '/' ||
-    buttonName === 'x'
-  ) {
+  if (operations.includes(buttonName)) {
     total = operate(total, next, operation);
     next = null;
     operation = null;
