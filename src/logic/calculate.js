@@ -1,19 +1,33 @@
-export default function calculate(data, buttonName) {
-  let { total, next, operation } = data;
+import operate from './operate';
+
+export default function calculate(calcuatorData, buttonName) {
+  let { total, next, operation } = calcuatorData;
 
   if (buttonName === 'AC') {
-    total = 0;
-    next = 0;
+    total = null;
+    next = null;
     operation = null;
   }
 
   if (buttonName === '+/-') {
     total *= -1;
-    next *= -1;
+    next = total;
     operation = null;
   }
 
-  if (buttonName === '+') {
+  if (buttonName === '%') {
+    
+  }
+
+  if (
+    buttonName === '+' ||
+    buttonName === '-' ||
+    buttonName === '/' ||
+    buttonName === 'x'
+  ) {
+    total = operate(total, next, operation);
+    next = null;
+    operation = null;
   }
 
   return { total, next, operation };

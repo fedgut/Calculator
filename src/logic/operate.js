@@ -2,23 +2,23 @@ import Big from 'big.js';
 
 export default function operate(numberOne, numberTwo, operation) {
   let total = new Big(0);
-  const x = new Big(numberOne);
-  const y = new Big(numberTwo);
+  const one = new Big(numberOne);
+  const two = new Big(numberTwo);
   if (operation === '+') {
-    total = x.plus(y);
+    total = one.plus(two);
   }
   if (operation === '-') {
-    total = x.minus(y);
+    total = one.minus(two);
   }
   if (operation === '/') {
-    if (y !== 0) {
-      total = x.div(y);
+    if (two !== 0) {
+      total = one.div(two);
     } else {
       total = 'May not divide by 0';
     }
   }
   if (operation === 'x') {
-    total = x.times(y);
+    total = one.times(two);
   }
   return total;
 }
