@@ -20,5 +20,8 @@ export default function operate(numberOne, numberTwo, operation) {
   if (operation === 'x') {
     total = one.times(two);
   }
+  if (operation === '%') {
+    total = (one.times(two)).div(100);
+  }
   return total;
 }
