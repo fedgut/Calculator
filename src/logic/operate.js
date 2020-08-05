@@ -2,8 +2,8 @@ import Big from 'big.js';
 
 export default function operate(numberOne, numberTwo, operation) {
   let total = new Big(0);
-  const one = new Big(numberOne);
-  const two = new Big(numberTwo);
+  const one = new Big(numberOne || 0);
+  const two = new Big(numberTwo || 0);
   if (operation === '+') {
     total = one.plus(two);
   }
@@ -21,7 +21,7 @@ export default function operate(numberOne, numberTwo, operation) {
     total = one.times(two);
   }
   if (operation === '%') {
-    total = (one.times(two)).div(100);
+    total = one.times(two).div(100);
   }
-  return total;
+  return total.toString();
 }
