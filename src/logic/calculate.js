@@ -13,6 +13,14 @@ export default function calculate(calcuatorData, buttonName) {
     operation = null;
   }
 
+  if (buttonName === '+/-') {
+    if (next) {
+      next *= -1;
+    } else {
+      total *= -1;
+    }
+  }
+
   if (numbers.includes(buttonName) || buttonName === dot) {
     if (operation === null) {
       total += total;
@@ -21,17 +29,9 @@ export default function calculate(calcuatorData, buttonName) {
     }
   }
 
-  if (buttonName === '+/-') {
-    total *= -1;
-    next = total;
-    operation = null;
-  }
-
-  if (operations.includes(operation)) {
-    if (total !== null && next !== null) {
+  if (buttonName === '=') {
+    if (operations.includes(operation)) {
       total = operate(total, next, operation);
-      next = null;
-      operation = null;
     }
   }
 
