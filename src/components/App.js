@@ -29,7 +29,7 @@ class App extends Component {
     const show = next || total || '0';
     return (
       <div className="App">
-        <Display show={show} />
+        <Display result={show} />
         <ButtonPanel onClick={this.handleClick} />
       </div>
     );

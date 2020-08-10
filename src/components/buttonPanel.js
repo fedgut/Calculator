@@ -1,4 +1,5 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 import Button from './button';
 
 const g1 = ['AC', '+/-', '%', '÷'];
@@ -37,12 +38,19 @@ const ButtonPanel = props => {
         <Button handleClick={handleClick} buttonName={g4[3]} />
       </div>
       <div className="group-five ButtonRow">
-        <Button handleClick={handleClick} buttonName={g5[0]} color="#e0e0e0" wide />
+        <Button
+          handleClick={handleClick}
+          buttonName={g5[0]}
+          color="#e0e0e0"
+          wide
+        />
         <Button handleClick={handleClick} buttonName={g5[1]} color="#e0e0e0" />
         <Button handleClick={handleClick} buttonName={g5[2]} />
       </div>
     </div>
   );
 };
+
+ButtonPanel.propTypes = { handleClick: PropTypes.func.isRequired };
 
 export default ButtonPanel;
