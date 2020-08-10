@@ -13,7 +13,11 @@ const Button = props => {
 
   if (wide) {
     return (
-      <div style={{ width: '50%', background: color }} className="Button">
+      <div
+        style={{ width: '50%', background: color }}
+        className="Button"
+        onClick={handleClick(buttonName)}
+      >
         {buttonName}
       </div>
     );
