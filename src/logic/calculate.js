@@ -11,13 +11,17 @@ export default function calculate(calcuatorData, buttonName) {
     total = null;
     next = null;
     operation = null;
-  } else if (buttonName === '+/-') {
+  }
+
+  if (buttonName === '+/-') {
     if (next) {
       next *= -1;
     } else {
       total *= -1;
     }
-  } else if (numbers.includes(buttonName) || buttonName === dot) {
+  }
+
+  if (numbers.includes(buttonName) || buttonName === dot) {
     if (operation === null) {
       if (buttonName === dot && total.indexOf(dot) === -1) {
         total += dot;
@@ -32,11 +36,15 @@ export default function calculate(calcuatorData, buttonName) {
         next = next ? next + buttonName : buttonName;
       }
     }
-  } else if (buttonName === '=') {
+  }
+
+  if (buttonName === '=') {
     total = operate(total, next, operation);
     next = null;
     operation = null;
-  } else if (operations.includes(buttonName)) {
+  }
+
+  if (operations.includes(buttonName)) {
     operation = buttonName;
   }
 
