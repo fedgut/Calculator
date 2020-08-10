@@ -2,7 +2,7 @@ import React from 'react';
 import Button from './button';
 
 const g1 = ['AC', '+/-', '%', '÷'];
-const g2 = ['7', '8', '9', 'X'];
+const g2 = ['7', '8', '9', 'x'];
 const g3 = ['4', '5', '6', '-'];
 const g4 = ['1', '2', '3', '+'];
 const g5 = ['0', '.', '='];
