@@ -16,7 +16,9 @@ const Button = props => {
       <div
         style={{ width: '50%', background: color }}
         className="Button"
-        onClick={handleClick(buttonName)}
+        role="button"
+        tabIndex={0}
+        onClick={() => handleClick(buttonName)}
       >
         {buttonName}
       </div>
@@ -26,7 +28,9 @@ const Button = props => {
     <div
       style={{ width: '25%', background: color }}
       className="Button"
-      onClick={handleClick(buttonName)}
+      role="button"
+      tabIndex={0}
+      onClick={() => handleClick(buttonName)}
     >
       {buttonName}
     </div>

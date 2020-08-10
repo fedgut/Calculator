@@ -23,9 +23,13 @@ export default function calculate(calcuatorData, buttonName) {
 
   if (numbers.includes(buttonName) || buttonName === dot) {
     if (operation === null) {
-      total += total;
+      if (buttonName === dot && total.indexOf(dot) === -1) {
+        total += dot;
+      } else {
+        total = total ? total + buttonName : buttonName;
+      }
     } else {
-      next += next;
+      next = next ? next + buttonName : buttonName;
     }
   }
 
@@ -33,6 +37,10 @@ export default function calculate(calcuatorData, buttonName) {
     if (operations.includes(operation)) {
       total = operate(total, next, operation);
     }
+  }
+
+  if (operations.includes(buttonName)) {
+    operation = buttonName;
   }
 
   return { total, next, operation };

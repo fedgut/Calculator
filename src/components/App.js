@@ -17,6 +17,8 @@ class App extends Component {
 
   handleClick(buttonName) {
     const { total, next, operation } = calculate(this.state, buttonName);
+    console.log(`total: ${total} next: ${next} operation: ${operation}`);
+    console.log(buttonName);
     this.setState({
       total,
       next,
@@ -26,11 +28,11 @@ class App extends Component {
 
   render() {
     const { next, total } = this.state;
-    const show = next || total || '0';
+    const show = next || total;
     return (
       <div className="App">
         <Display result={show} />
-        <ButtonPanel onClick={this.handleClick} />
+        <ButtonPanel handleClick={this.handleClick} />
       </div>
     );
   }
