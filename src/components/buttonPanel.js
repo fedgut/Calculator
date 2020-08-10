@@ -1,5 +1,4 @@
 import React from 'react';
-import { PropTypes } from 'prop-types';
 import Button from './button';
 
 const g1 = ['AC', '+/-', '%', '÷'];
@@ -50,7 +49,5 @@ const ButtonPanel = props => {
     </div>
   );
 };
-
-ButtonPanel.propTypes = { handleClick: PropTypes.func.isRequired };
 
 export default ButtonPanel;
