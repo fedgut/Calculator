@@ -3,7 +3,7 @@ import operate from './operate';
 export default function calculate(calcuatorData, buttonName) {
   let { total, next, operation } = calcuatorData;
 
-  const operations = ['+', '-', '/', 'x', '%'];
+  const operations = ['+', '-', '÷', 'x', '%'];
   const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
   const dot = '.';
 
@@ -11,35 +11,32 @@ export default function calculate(calcuatorData, buttonName) {
     total = null;
     next = null;
     operation = null;
-  }
-
-  if (buttonName === '+/-') {
+  } else if (buttonName === '+/-') {
     if (next) {
       next *= -1;
     } else {
       total *= -1;
     }
-  }
-
-  if (numbers.includes(buttonName) || buttonName === dot) {
+  } else if (numbers.includes(buttonName) || buttonName === dot) {
     if (operation === null) {
       if (buttonName === dot && total.indexOf(dot) === -1) {
         total += dot;
-      } else {
+      } else if (buttonName !== dot) {
         total = total ? total + buttonName : buttonName;
       }
-    } else {
-      next = next ? next + buttonName : buttonName;
     }
-  }
-
-  if (buttonName === '=') {
-    if (operations.includes(operation)) {
-      total = operate(total, next, operation);
+    if (operation !== null) {
+      if (buttonName === dot && next.indexOf(dot) === -1) {
+        next += dot;
+      } else if (buttonName !== dot) {
+        next = next ? next + buttonName : buttonName;
+      }
     }
-  }
-
-  if (operations.includes(buttonName)) {
+  } else if (buttonName === '=') {
+    total = operate(total, next, operation);
+    next = null;
+    operation = null;
+  } else if (operations.includes(buttonName)) {
     operation = buttonName;
   }
 

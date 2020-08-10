@@ -10,7 +10,7 @@ export default function operate(numberOne, numberTwo, operation) {
   if (operation === '-') {
     total = one.minus(two);
   }
-  if (operation === '/') {
+  if (operation === '÷') {
     if (two !== 0) {
       total = one.div(two);
     } else {
