@@ -1,3 +1,7 @@
+/* Removed rules for accesibility, for they are outside the scope of this project */
+
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -18,8 +22,6 @@ const Button = props => {
     <div
       style={{ width: '25%', background: color }}
       className="Button"
-      role="button"
-      tabIndex={0}
       onClick={handleClick(buttonName)}
     >
       {buttonName}
