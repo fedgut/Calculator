@@ -3,9 +3,10 @@ import operate from './operate';
 export default function calculate(calcuatorData, buttonName) {
   let { total, next, operation } = calcuatorData;
 
-  const operations = ['+', '-', '÷', 'x', '%'];
+  const operations = ['+', '-', '÷', 'x'];
   const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
   const dot = '.';
+  const percent = '%';
 
   if (buttonName === 'AC') {
     total = null;
@@ -38,10 +39,17 @@ export default function calculate(calcuatorData, buttonName) {
     }
   }
 
-  if (buttonName === '=') {
-    total = operate(total, next, operation);
+  if (buttonName === percent) {
     next = null;
-    operation = null;
+    total = operate(total, '1', percent);
+  }
+
+  if (buttonName === '=') {
+    if (next && operation) {
+      total = operate(total, next, operation);
+      next = null;
+      operation = null;
+    }
   }
 
   if (operations.includes(buttonName)) {

@@ -11,10 +11,10 @@ export default function operate(numberOne, numberTwo, operation) {
     total = one.minus(two);
   }
   if (operation === '÷') {
-    if (two !== 0) {
+    try {
       total = one.div(two);
-    } else {
-      total = 'May not divide by 0';
+    } catch (error) {
+      total = 'ERROR DIV/0';
     }
   }
   if (operation === 'x') {
