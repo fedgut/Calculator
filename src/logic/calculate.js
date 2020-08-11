@@ -41,6 +41,7 @@ export default function calculate(calcuatorData, buttonName) {
 
   if (buttonName === percent) {
     next = null;
+    operation = 'x';
     total = operate(total, '1', percent);
   }
 
@@ -48,7 +49,7 @@ export default function calculate(calcuatorData, buttonName) {
     if (next && operation) {
       total = operate(total, next, operation);
       next = null;
-      operation = null;
+      operation = 'null';
     }
   }
 
